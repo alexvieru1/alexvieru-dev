@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "../../lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   motion,
   AnimatePresence,
@@ -232,10 +231,42 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <IconX className="text-white" onClick={onClick} />
-  ) : (
-    <IconMenu2 className="text-white" onClick={onClick} />
+  return (
+    <motion.button
+      type="button"
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      onClick={onClick}
+      className="relative flex h-10 w-10 items-center justify-center"
+      whileTap={{ scale: 0.95 }}
+    >
+      <motion.span
+        initial={false}
+        animate={{
+          translateY: isOpen ? 0 : -6,
+          rotate: isOpen ? 45 : 0,
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="absolute block h-0.5 w-6 rounded-full bg-white"
+      />
+      <motion.span
+        initial={false}
+        animate={{
+          opacity: isOpen ? 0 : 1,
+          filter: isOpen ? "blur(6px)" : "blur(0px)",
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="absolute block h-0.5 w-6 rounded-full bg-white"
+      />
+      <motion.span
+        initial={false}
+        animate={{
+          translateY: isOpen ? 0 : 6,
+          rotate: isOpen ? -45 : 0,
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="absolute block h-0.5 w-6 rounded-full bg-white"
+      />
+    </motion.button>
   );
 };
 

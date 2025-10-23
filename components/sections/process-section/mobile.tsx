@@ -37,7 +37,7 @@ export default function Mobile({ steps }: { steps: Step[] }) {
                 }}
               >
                 {/* Subtle inner highlight */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10 mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
                 <div className="relative z-10 flex flex-col items-start">
                   <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
                     {typeof s.icon === "string" ? (
@@ -55,7 +55,7 @@ export default function Mobile({ steps }: { steps: Step[] }) {
                     {s.title}
                   </h3>
                   <span
-                    className="mt-2 mb-4 inline-block h-[2px] w-10 rounded-full"
+                    className="mt-2 mb-4 inline-block h-0.5 w-10 rounded-full"
                     style={{ backgroundColor: palette.accent }}
                   />
                   <p className="text-zinc-100/85 text-sm leading-relaxed max-w-xs">{s.description}</p>
