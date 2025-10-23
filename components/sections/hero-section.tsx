@@ -1,8 +1,8 @@
 "use client";
 import { motion, useTransform, type MotionValue } from "framer-motion";
-import BlurText from "./BlurText";
-import Silk from "./Silk";
-import ShinyText from "./ShinyText";
+import BlurText from "../BlurText";
+import Silk from "../Silk";
+import ShinyText from "../ShinyText";
 import { useEffect, useState } from "react";
 
 type HeroSectionProps = {

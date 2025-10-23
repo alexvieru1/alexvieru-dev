@@ -1,6 +1,6 @@
 "use client";
 import { motion, useTransform, type MotionValue } from "framer-motion";
-import { DotBackground } from "./dot-background";
+import { DotBackground } from "../dot-background";
 
 type QuoteSectionProps = {
   scrollYProgress: MotionValue<number>;
@@ -8,7 +8,7 @@ type QuoteSectionProps = {
 
 export default function QuoteSection({ scrollYProgress }: QuoteSectionProps) {
   // Opposite curve to the hero (grows into place)
-  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.97, 1]);
   const rotateX = useTransform(scrollYProgress, [0, 1], [4, 0]);
   const y = useTransform(scrollYProgress, [0, 1], ["6vh", "0vh"]);
   const quote =

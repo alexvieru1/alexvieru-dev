@@ -11,6 +11,8 @@
   }
 }
 
+.perspective { perspective: 1200px; }
+
 @utility animate-shine {
   animation: shine 5s linear infinite;
 }

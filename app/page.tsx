@@ -1,32 +1,35 @@
-'use client'
-import HeroSection from "@/components/hero-section";
+"use client";
+import HeroSection from "@/components/sections/hero-section";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Lenis from 'lenis';
-import QuoteSection from "@/components/quote-section";
-
+import Lenis from "lenis";
+import QuoteSection from "@/components/sections/quote-section";
+import ProcessSection from "@/components/sections/process-section";
 
 export default function Home() {
-    const container = useRef<HTMLDivElement | null>(null);
+  const container = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end end"]
-  }) 
+    offset: ["start start", "end end"],
+  });
 
-  useEffect( () => {
-    const lenis = new Lenis()
+  useEffect(() => {
+    const lenis = new Lenis();
 
     function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+  }, []);
   return (
-    <div ref={container} className="relative h-[200vh]">
-      <HeroSection scrollYProgress={scrollYProgress}/>
-      <QuoteSection scrollYProgress={scrollYProgress}/>
+    <div ref={container}>
+      <div className="relative h-[200vh]">
+        <HeroSection scrollYProgress={scrollYProgress} />
+        <QuoteSection scrollYProgress={scrollYProgress} />
+      </div>
+      <ProcessSection/>
     </div>
   );
 }
