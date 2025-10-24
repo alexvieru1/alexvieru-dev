@@ -37,7 +37,12 @@ export function NavbarDemo() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-            <NavbarButton className="bg-white text-black lg:rounded-full">Book a call</NavbarButton>
+          <NavbarButton
+            href="mailto:vieru.alexandruu@gmail.com"
+            className="bg-white text-black lg:rounded-full"
+          >
+            Book a call
+          </NavbarButton>
         </NavBody>
 
         {/* Mobile Navigation */}
@@ -64,13 +69,14 @@ export function NavbarDemo() {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full text-black bg-white"
-              >
-                Book a call
-              </NavbarButton>
+            <NavbarButton
+              href="mailto:vieru.alexandruu@gmail.com"
+              onClick={() => setIsMobileMenuOpen(false)}
+              variant="primary"
+              className="w-full bg-white text-black"
+            >
+              Book a call
+            </NavbarButton>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>

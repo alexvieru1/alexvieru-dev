@@ -6,6 +6,8 @@ import Lenis from "lenis";
 import QuoteSection from "@/components/sections/quote-section";
 import ProcessSection from "@/components/sections/process-section";
 import ServicesSection from "@/components/sections/services-section";
+import FeaturedWorkSection from "@/components/sections/featured-work";
+import ContactSection from "@/components/sections/process-section/contact-section";
 
 export default function Home() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -25,13 +27,23 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div ref={container}>
+    <div ref={container} className="scroll-smooth">
       <div className="relative h-[200vh]">
         <HeroSection scrollYProgress={scrollYProgress} />
         <QuoteSection scrollYProgress={scrollYProgress} />
       </div>
-      <ProcessSection/>
-      <ServicesSection/>
+      <div id="process">
+        <ProcessSection />
+      </div>
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="featured-work">
+        <FeaturedWorkSection />
+      </div>
+      <div id="contact">
+        <ContactSection />
+      </div>
     </div>
   );
 }

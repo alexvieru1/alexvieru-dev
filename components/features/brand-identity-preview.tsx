@@ -7,14 +7,14 @@ export default function BrandIdentityPreview() {
     <div className="relative h-full w-full p-6">
       <div className="grid gap-4">
         {/* Palette row */}
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid gap-3 sm:grid-cols-5 sm:gap-3 grid-cols-[repeat(auto-fit,minmax(72px,1fr))]">
           {palette.map((hex) => (
             <div
               key={hex}
-              className="relative h-20 rounded-xl ring-1 ring-white/10"
+              className="relative h-20 rounded-xl ring-1 ring-white/10 sm:h-20 h-16"
               style={{ backgroundColor: hex }}
             >
-              <span className="absolute bottom-2 right-2 text-[10px] tracking-wide text-white/70 px-1.5 py-0.5 rounded bg-black/30 ring-1 ring-white/10">
+              <span className="absolute bottom-1 left-1/2 w-max -translate-x-1/2 text-[9px] tracking-wide text-white/70 px-1.5 py-0.5 rounded bg-black/35 ring-1 ring-white/10 shadow-md shadow-black/20 sm:text-[10px]">
                 {hex}
               </span>
             </div>
